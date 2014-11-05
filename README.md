@@ -1,93 +1,44 @@
 
-This project extends the [Pikater](https://github.com/peskk3am/pikater4) project with multi-user support, web based GUI and distributed infrastructure to allow simultaneous computation of many individual tasks.
+This project extends the [Pikater core](https://github.com/sbalcar/pikater) project with a web based GUI and multi-user support.
 
 ## Main features
 
-Client:
-* 2D editor to define experiments (boxes and edges style).
-* Potentially many experiments may be scheduled to execution.
-* Displaying the experiment results and converting/downloading them into a human-readable format, such as CSV.
-* Uploading custom data sets and computation methods.
-
-Server:
-* Many features of the original Pikater project, such as computation method recommendation.
-* Experiments planning and execution.
-* Saving of trained models which can then be used in further experiments.
-* Administrator functions, such as supervision of all scheduled experiments.
+* All features of the parent project.
+* Administrative functions such as supervision of all scheduled experiments.
+* Uploading custom datasets and computation methods for experiments.
+* 2D editor to define experiments (boxes-and-edges style).
+* Experiments may be queued for execution at any time, in any number.
+* Saving of trained models which can then be used in future experiments.
+* Viewing/comparing experiment results and converting/downloading them into a human-readable format, such as CSV.
 
 ## Life-cycle
 
-### Installation
+### Requirements
 
-First and foremost, note several things:
+Take a look at requirements of the parent project.
 
-1. The repository has several branches. Two of them are important:
-	* `master` - contains the latest core system version.
-	* `vaadin` - contains the latest GUI (web application) and documentation versions.
-2. This project requires:
-    * Java version 7,
-	* a JPA-compatible database (at this moment, only PostgreSQL database is supported) running locally or externally,
-	* a SMTP server open for local connections, running on the same machine as pikater core.
+This extension requires:
+1. An instance of the parent project, running locally on the same machine as the extension.
+2. A running servlet container (e.g. Apache Tomcat), again on the same machine.
 
-#### Database<a name="dbInstall"></a>
+### Installation & deployment
 
-TODO: this should all be covered in the original pikater project
-
-1. Install PostgreSQL database. Pikater was developed for version 9.3 and we highly recommended using it. Either use package managers or visit the [official download site](http://www.postgresql.org/download).
-2. Create a new database with a name of your desire, UTF-8 encoding is recommended.
-3. Clone the project.
-4. Change the following files accordingly:
-    * `Pikater/src/beans.xml`
-    * `Pikater/src/META-INF/persistence.xml`
-5. Use the `Pikater/src/org.pikater.shared.database.util.initialisation.DatabaseInitialisation` utility to generate the configuration files as well as to create the first administrator account.
-
-#### Core system
-
-Clone the `master` branch on target machine.
-
-#### Extension
-
-Import the project in Eclipse:
-
-1. Install [Eclipse](https://www.eclipse.org/downloads/).
-2. Install the [Vaadin plugin for Eclipse](http://vaadin.com/eclipse).
-3. Clone the `vaadin` branch on target machine.
-4. Import the cloned project in Eclipse (`File->Import`).
-5. Reconfigure the linked `Apache Tomcat v7.0` server environment if needed.
-6. Compile the `org.pikater.web.vaadin.gui.PikaterWidgetset.gwt.xml` widgetset using the plugin installed in step 2.
-7. Inspect/edit the `WebContent/WEB-INF/web.xml` file. It is used to configure the web application. Detailed information can be found [here](wiki/technical/web/Web-documentation#conf).
-
-### Deployment & launching
-
-#### Database
-
-Make it publicly available to the machines you wish to run core system or extension on.
-
-#### Core system
-
-Deployment was already done in installation.  
-To launch the core system, use the `Pikater/Launch-core.launch` launch configuration.
-
-#### Extension
-
-The extension requires an instance of core system running locally so install and launch it first.
-
-To deploy and launch the extension:
-
-1. Start the servlet container.
-2. Export the extension into a `.war` file from Eclipse, deploy it into the servlet container.
-3. Start the deployed application.
-4. Access the page, e.g. go to `http://localhost:8080/Pikater` (for Apache Tomcat; by default) or `http://my.domain/Pikater`. A login dialog will appear.
-5. Enter credentials you defined in step 4 of [database installation](#dbInstall) or another of your accounts and start using. See [user guide](wiki/user-guide/User-guide.md).
+1. Install the parent project.
+2. Install your servlet container.
+3. Clone both the parent project and extension into the same folder.
+4. Import the extension project in Eclipse (`File->Import`).
+5. Install the [Vaadin plugin for Eclipse](http://vaadin.com/eclipse), if not done yet.
+6. Resolve Ivy dependencies for the extension.
+7. Compile the `org.pikater.web.vaadin.gui.PikaterWidgetset.gwt.xml` widgetset using the plugin installed in step 5.
+8. Inspect/edit the `WebContent/WEB-INF/web.xml` file. It is used to configure the web application. Detailed information can be found [here](wiki/technical/web/Web-documentation#conf).
+9. Bundle the extension into a ".war" file and deploy it into the servlet container (with the parent project already running).
+10. Go to `http://{my.domain}:{my.port}/pikater-vaadin`, you will be asked for credentials. Use the first administrator account you generated when installing the parent project and database.
 
 ### Maintenance
 
-If the extension is used, one or more administrators may need to manage it using the GUI. See [admin guide](wiki/guide-admin/Admin-guide.md).
+One or more administrators may need to manage the extension from time to time. See [admin guide](wiki/guide-admin/Admin-guide.md).
 
 Otherwise, the application should be self-maintained.
-
-
-
 
 ## Wiki
 
@@ -104,8 +55,6 @@ This project contains inline documentation written in markdown, easily available
 ### Usage
 
 [How to use](wiki/guide_admin/wiki/03-Usage.md)
-
-
 
 
 ## Documentation<a name="docs"/>
