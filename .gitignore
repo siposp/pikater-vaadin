@@ -3,7 +3,9 @@ bin
 build
 
 # Ignore junk generated at runtime.
-core/data/files
+WebContent/VAADIN/widgetsets
+WebContent/VAADIN/gwt-unitCache
 
 # Miscellaneous.
 .DS_Store
+.sonar

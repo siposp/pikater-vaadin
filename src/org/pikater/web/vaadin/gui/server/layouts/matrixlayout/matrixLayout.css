@@ -1,0 +1,93 @@
+@CHARSET "US-ASCII";
+
+.matrixView
+{
+}
+
+.matrixView .firstRow, .matrixView .secondRow
+{
+	padding: 5px;
+}
+
+.matrixView .v-slot-headerComponent, .matrixView .main-subcomponent
+{
+	border: 1px solid black;
+}
+
+.matrixView .leftHeaders.main-subcomponent
+{
+	height: 100%;
+}
+
+.matrixView .topHeaders.main-subcomponent
+{
+}
+
+.matrixView .leftHeaders, .matrixView .topHeaders
+{
+	overflow: auto;
+}
+
+.matrixView .content
+{
+	padding: 15px;
+}
+
+.matrixView .headerComponent
+{
+	border: 1px solid black;
+	margin: 3px;
+}
+
+.matrixView .headerComponent .v-label
+{
+	padding-left: 5px;
+	line-height: 30px;
+	background-color: transparent;
+}
+
+.matrixView .topHeaders .headerComponent .v-label
+{
+	padding-left: 0px;
+	text-align: center;
+}
+
+/*******************************************************/
+/* ELIMINATE VAADIN'S INTRUSIVE STUFF */
+
+.headerComponent .v-panel-content
+{
+	border: 0; /* override vaadin's styles */
+	background-color: transparent;
+}
+
+.headerComponent .v-panel-deco
+{
+	/* override vaadin's styles */
+	height: 0px;
+	border: 0;
+}
+
+/*******************************************************/
+/* SELECTION */
+
+.headerComponent.selected
+{
+	background-color: black;
+	color: white;
+}
+
+.headerComponent.notSelected:hover
+{
+    background-color: lightyellow;
+}
+
+.headerComponent.selected:hover
+{
+    color: lightyellow;
+}
+
+.headerComponent.notSelected:active, .headerComponent.selected:active
+{
+	background-color: transparent;
+}

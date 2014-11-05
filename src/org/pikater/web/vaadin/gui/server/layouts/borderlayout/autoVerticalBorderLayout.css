@@ -1,0 +1,7 @@
+@CHARSET "US-ASCII";
+
+.avbl-firstColumn, .avbl-secondColumn, .avbl-thirdColumn
+{
+	padding: 0px;
+	overflow: auto;
+}

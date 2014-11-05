@@ -1,0 +1,13 @@
+@CHARSET "US-ASCII";
+
+.utilitiesToolboxSize
+{
+	width: 100%;
+	height: 150px;
+}
+
+.utilitiesToolbox
+{
+	padding: 1px;
+	border: 1px solid black;
+}

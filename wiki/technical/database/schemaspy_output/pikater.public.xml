@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="pikater" schema="public" type="PostgreSQL - 9.2.6">
+   <tables>
+      <table name="_user" numRows="110" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="owner_id" foreignKey="fk_batch_owner_id" implied="false" onDeleteCascade="false" table="batch"/>
+            <child column="owner_id" foreignKey="fk_datasetlo_owner_id" implied="false" onDeleteCascade="false" table="datasetlo"/>
+            <child column="owner_id" foreignKey="fk_externalagent_owner_id" implied="false" onDeleteCascade="false" table="externalagent"/>
+            <child column="user_id" foreignKey="fk_filemapping_user_id" implied="false" onDeleteCascade="false" table="filemapping"/>
+            <child column="userswiththisrole_id" foreignKey="fk_role__user_userswiththisrole_id" implied="false" onDeleteCascade="false" table="role__user"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="email" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="3" name="lastlogin" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="4" name="login" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="password" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="prioritymax" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="7" name="status" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="role_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk__user_role_id" implied="false" onDeleteCascade="false" table="role"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="_user_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="_user_login_key" unique="true">
+            <column ascending="true" name="login"/>
+         </index>
+      </table>
+      <table name="_user_batch" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jpauser_id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="batches_id" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="jpauser_id" sequenceNumberInPK="1"/>
+         <primaryKey column="batches_id" sequenceNumberInPK="2"/>
+         <index name="_user_batch_pkey" unique="true">
+            <column ascending="true" name="jpauser_id"/>
+            <column ascending="true" name="batches_id"/>
+         </index>
+      </table>
+      <table name="agentinfo" numRows="30" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="agentclass" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="creationtime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="informationxml" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="ontologyclass" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="externalagent_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_agentinfo_externalagent_id" implied="false" onDeleteCascade="false" table="externalagent"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="agentinfo_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="attributecategoricalmetadata" numRows="51" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_attributecategoricalmetadata_id" implied="false" onDeleteCascade="false" table="attributemetadata"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numberofcategories" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="attributecategoricalmetadata_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="attributemetadata" numRows="150" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="id" foreignKey="fk_attributecategoricalmetadata_id" implied="false" onDeleteCascade="false" table="attributecategoricalmetadata"/>
+            <child column="id" foreignKey="fk_attributenumericalmetadata_id" implied="false" onDeleteCascade="false" table="attributenumericalmetadata"/>
+            <child column="attributemetadata_id" foreignKey="fk_datasetlo_attributemetadata_attributemetadata_id" implied="false" onDeleteCascade="false" table="datasetlo_attributemetadata"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="dtype" nullable="true" remarks="" size="31" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="attrorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="17" id="3" name="classentropy" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="4" name="entropy" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="5" name="istarget" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="17" id="7" name="ratioofmissingvalues" nullable="true" remarks="" size="17" type="float8"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="attributemetadata_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="attributenumericalmetadata" numRows="99" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_attributenumericalmetadata_id" implied="false" onDeleteCascade="false" table="attributemetadata"/>
+         </column>
+         <column autoUpdated="false" digits="17" id="1" name="avarage" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="2" name="isreal" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="17" id="3" name="max" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="4" name="median" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="5" name="min" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="6" name="mode" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="7" name="variance" nullable="true" remarks="" size="17" type="float8"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="attributenumericalmetadata_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="batch" numRows="479" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="jpabatch_id" foreignKey="fk_batch_experiment_jpabatch_id" implied="false" onDeleteCascade="false" table="batch_experiment"/>
+            <child column="batch_id" foreignKey="fk_experiment_batch_id" implied="false" onDeleteCascade="false" table="experiment"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="xml" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="2" name="created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="3" name="finished" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="4" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="note" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="sendemailafterfinish" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="6" id="7" name="started" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="8" name="status" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="totalpriority" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="10" name="owner_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_batch_owner_id" implied="false" onDeleteCascade="false" table="_user"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="11" name="userassignedpriority" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="batch_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="batch_experiment" numRows="457" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jpabatch_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_batch_experiment_jpabatch_id" implied="false" onDeleteCascade="false" table="batch"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="experiments_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_batch_experiment_experiments_id" implied="false" onDeleteCascade="false" table="experiment"/>
+         </column>
+         <primaryKey column="jpabatch_id" sequenceNumberInPK="1"/>
+         <primaryKey column="experiments_id" sequenceNumberInPK="2"/>
+         <index name="batch_experiment_pkey" unique="true">
+            <column ascending="true" name="jpabatch_id"/>
+            <column ascending="true" name="experiments_id"/>
+         </index>
+      </table>
+      <table name="datasetlo" numRows="2998" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="jpadatasetlo_id" foreignKey="fk_datasetlo_attributemetadata_jpadatasetlo_id" implied="false" onDeleteCascade="false" table="datasetlo_attributemetadata"/>
+            <child column="outputs_id" foreignKey="fk_result_datasetlo_outputs_id" implied="false" onDeleteCascade="false" table="result_datasetlo"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="oid" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="6" id="2" name="created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="hash" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="size" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="6" name="globalmetadata_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_datasetlo_globalmetadata_id" implied="false" onDeleteCascade="false" table="globalmetadata"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="7" name="owner_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_datasetlo_owner_id" implied="false" onDeleteCascade="false" table="_user"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="8" name="approved" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="9" name="visible" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="10" name="source" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="datasetlo_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="datasetlo_attributemetadata" numRows="5995" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jpadatasetlo_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_datasetlo_attributemetadata_jpadatasetlo_id" implied="false" onDeleteCascade="false" table="datasetlo"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="attributemetadata_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_datasetlo_attributemetadata_attributemetadata_id" implied="false" onDeleteCascade="false" table="attributemetadata"/>
+         </column>
+         <primaryKey column="jpadatasetlo_id" sequenceNumberInPK="1"/>
+         <primaryKey column="attributemetadata_id" sequenceNumberInPK="2"/>
+         <index name="datasetlo_attributemetadata_pkey" unique="true">
+            <column ascending="true" name="jpadatasetlo_id"/>
+            <column ascending="true" name="attributemetadata_id"/>
+         </index>
+      </table>
+      <table name="experiment" numRows="457" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="experiments_id" foreignKey="fk_batch_experiment_experiments_id" implied="false" onDeleteCascade="false" table="batch_experiment"/>
+            <child column="jpaexperiment_id" foreignKey="fk_experiment_result_jpaexperiment_id" implied="false" onDeleteCascade="false" table="experiment_result"/>
+            <child column="experiment_id" foreignKey="fk_result_experiment_id" implied="false" onDeleteCascade="false" table="result"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="2" name="finished" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="modelstrategy" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="4" name="started" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="5" name="status" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="batch_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_experiment_batch_id" implied="false" onDeleteCascade="false" table="batch"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="7" name="usedmodel_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_experiment_usedmodel_id" implied="false" onDeleteCascade="false" table="model"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="experiment_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="experiment_result" numRows="1579" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jpaexperiment_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_experiment_result_jpaexperiment_id" implied="false" onDeleteCascade="false" table="experiment"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="results_id" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="jpaexperiment_id" sequenceNumberInPK="1"/>
+         <primaryKey column="results_id" sequenceNumberInPK="2"/>
+         <index name="experiment_result_pkey" unique="true">
+            <column ascending="true" name="jpaexperiment_id"/>
+            <column ascending="true" name="results_id"/>
+         </index>
+      </table>
+      <table name="externalagent" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="externalagent_id" foreignKey="fk_agentinfo_externalagent_id" implied="false" onDeleteCascade="false" table="agentinfo"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="agentclass" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="jar" nullable="false" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="0" id="5" name="name" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="owner_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_externalagent_owner_id" implied="false" onDeleteCascade="false" table="_user"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="7" name="approved" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="8" name="visible" nullable="true" remarks="" size="1" type="bool"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="externalagent_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="externalagent_agentclass_key" unique="true">
+            <column ascending="true" name="agentclass"/>
+         </index>
+         <index name="externalagent_name_key" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table name="filemapping" numRows="2998" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="externalfilename" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="internalfilename" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="user_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_filemapping_user_id" implied="false" onDeleteCascade="false" table="_user"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="filemapping_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="generalfile" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="oid" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="2" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="filename" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="user_id" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="generalfile_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="globalmetadata" numRows="12" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="globalmetadata_id" foreignKey="fk_datasetlo_globalmetadata_id" implied="false" onDeleteCascade="false" table="datasetlo"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="attributetype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="linearregressionduration" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="numberofinstances" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="defaulttasktype_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_globalmetadata_defaulttasktype_id" implied="false" onDeleteCascade="false" table="tasktype"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="globalmetadata_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="model" numRows="721" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="usedmodel_id" foreignKey="fk_experiment_usedmodel_id" implied="false" onDeleteCascade="false" table="experiment"/>
+            <child column="createdmodel_id" foreignKey="fk_result_createdmodel_id" implied="false" onDeleteCascade="false" table="result"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="agentclassname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="serializedagent" nullable="true" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="0" id="4" name="creatorresult_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="5" name="permanent" nullable="true" remarks="" size="1" type="bool"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="model_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="result" numRows="855" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="jparesult_id" foreignKey="fk_result_datasetlo_jparesult_id" implied="false" onDeleteCascade="false" table="result_datasetlo"/>
+            <child column="jparesult_id" foreignKey="fk_resultdatasets_jparesult_id" implied="false" onDeleteCascade="false" table="resultdatasets"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="agentname" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="agenttypeid" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="duration" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="17" id="4" name="durationlr" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="5" name="errorrate" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="6" id="6" name="finish" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="17" id="7" name="kappastatistic" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="8" name="meanabsoluteerror" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="9" name="note" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="options" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="11" name="outputs" nullable="true" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="17" id="12" name="relativeabsoluteerror" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="13" name="rootmeansquarederror" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="14" name="rootrelativesquarederror" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="15" name="serializedfilename" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="16" name="start" nullable="false" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="17" name="experiment_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_result_experiment_id" implied="false" onDeleteCascade="false" table="experiment"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="18" name="createdmodel_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_result_createdmodel_id" implied="false" onDeleteCascade="false" table="model"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="result_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="result_datasetlo" numRows="28" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jparesult_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_result_datasetlo_jparesult_id" implied="false" onDeleteCascade="false" table="result"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="outputs_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_result_datasetlo_outputs_id" implied="false" onDeleteCascade="false" table="datasetlo"/>
+         </column>
+         <primaryKey column="jparesult_id" sequenceNumberInPK="1"/>
+         <primaryKey column="outputs_id" sequenceNumberInPK="2"/>
+         <index name="result_datasetlo_pkey" unique="true">
+            <column ascending="true" name="jparesult_id"/>
+            <column ascending="true" name="outputs_id"/>
+         </index>
+      </table>
+      <table name="resultdatasets" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jparesult_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_resultdatasets_jparesult_id" implied="false" onDeleteCascade="false" table="result"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="outputs" nullable="true" remarks="" size="255" type="varchar"/>
+      </table>
+      <table name="role" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="role_id" foreignKey="fk__user_role_id" implied="false" onDeleteCascade="false" table="_user"/>
+            <child column="jparole_id" foreignKey="fk_role__user_jparole_id" implied="false" onDeleteCascade="false" table="role__user"/>
+            <child column="jparole_id" foreignKey="fk_role_userpriviledge_jparole_id" implied="false" onDeleteCascade="false" table="role_userpriviledge"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="role" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="role_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="role_name_key" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+         <index name="role_role_key" unique="true">
+            <column ascending="true" name="role"/>
+         </index>
+      </table>
+      <table name="role__user" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jparole_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_role__user_jparole_id" implied="false" onDeleteCascade="false" table="role"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="userswiththisrole_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_role__user_userswiththisrole_id" implied="false" onDeleteCascade="false" table="_user"/>
+         </column>
+         <primaryKey column="jparole_id" sequenceNumberInPK="1"/>
+         <primaryKey column="userswiththisrole_id" sequenceNumberInPK="2"/>
+         <index name="role__user_pkey" unique="true">
+            <column ascending="true" name="jparole_id"/>
+            <column ascending="true" name="userswiththisrole_id"/>
+         </index>
+      </table>
+      <table name="role_userpriviledge" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="jparole_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_role_userpriviledge_jparole_id" implied="false" onDeleteCascade="false" table="role"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="priviledges_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_role_userpriviledge_priviledges_id" implied="false" onDeleteCascade="false" table="userpriviledge"/>
+         </column>
+         <primaryKey column="jparole_id" sequenceNumberInPK="1"/>
+         <primaryKey column="priviledges_id" sequenceNumberInPK="2"/>
+         <index name="role_userpriviledge_pkey" unique="true">
+            <column ascending="true" name="jparole_id"/>
+            <column ascending="true" name="priviledges_id"/>
+         </index>
+      </table>
+      <table name="sequence" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="seq_name" nullable="false" remarks="" size="50" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="1" name="seq_count" nullable="true" remarks="" size="38" type="numeric"/>
+         <primaryKey column="seq_name" sequenceNumberInPK="1"/>
+         <index name="sequence_pkey" unique="true">
+            <column ascending="true" name="seq_name"/>
+         </index>
+      </table>
+      <table name="tasktype" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="defaulttasktype_id" foreignKey="fk_globalmetadata_defaulttasktype_id" implied="false" onDeleteCascade="false" table="globalmetadata"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="tasktype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="tasktype_name_key" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table name="userpriviledge" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4">
+            <child column="priviledges_id" foreignKey="fk_role_userpriviledge_priviledges_id" implied="false" onDeleteCascade="false" table="role_userpriviledge"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="priviledge" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="userpriviledge_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="userpriviledge_name_key" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+         <index name="userpriviledge_priviledge_key" unique="true">
+            <column ascending="true" name="priviledge"/>
+         </index>
+      </table>
+   </tables>
+</database>

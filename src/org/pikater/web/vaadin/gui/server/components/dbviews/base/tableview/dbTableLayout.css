@@ -1,0 +1,7 @@
+@CHARSET "US-ASCII";
+
+.dbTableLayout.pagingPadding .pagingComponent
+{
+	padding-left: 15px;
+	padding-right: 15px;
+}

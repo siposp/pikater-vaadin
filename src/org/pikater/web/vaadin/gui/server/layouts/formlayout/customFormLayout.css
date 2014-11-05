@@ -1,0 +1,7 @@
+@CHARSET "US-ASCII";
+
+.customFormLayout .v-formlayout-captioncell
+{
+	/* text-align: left; - probably looks even worse... */
+	/* vertical-align: top; - only high fields need to be set like this and that seems quite impossible */
+}

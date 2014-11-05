@@ -1,0 +1,50 @@
+@CHARSET "US-ASCII";
+
+.ledIndicator .v-panel-captionwrap
+{
+	display: none;
+}
+
+.ledIndicator .v-panel-content
+{
+	padding: 5px;
+	border: 0;
+	background: transparent;
+}
+
+.ledIndicator .v-panel-deco
+{
+	height: 0px;
+	border-top: 0;
+}
+
+.ledIndicator a /* abstract led styles (theme-independent) */
+{
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.ledIndicator .themeRed
+{
+	background-color: red;
+	
+	box-shadow: black 0 0 5px 0, inset darkred 0 0 3px;
+    -webkit-box-shadow: black 0 0 5px 0, inset darkred 0 0 3px;
+    -moz-box-shadow: black 0 0 5px 0, inset darkred 0 0 3px;
+}
+
+.ledIndicator .themeGreen
+{
+	background-color: lime;
+	
+    box-shadow: black 0 0 5px 0, inset darkgreen 0 0 3px;
+    -webkit-box-shadow: black 0 0 5px 0, inset darkgreen 0 0 3px;
+    -moz-box-shadow: black 0 0 5px 0, inset darkgreen 0 0 3px;
+}
+
+.ledIndicator .themeGreen.hoverEnabled:hover, .ledIndicator .themeRed.hoverEnabled:hover
+{
+    box-shadow: yellow 0 0 5px 0, inset yellow 0 0 3px;
+    -webkit-box-shadow: yellow 0 0 5px 0, inset yellow 0 0 3px;
+    -moz-box-shadow: yellow 0 0 5px 0, inset yellow 0 0 3px;
+}

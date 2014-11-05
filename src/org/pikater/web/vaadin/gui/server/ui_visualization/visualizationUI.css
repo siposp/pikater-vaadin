@@ -1,0 +1,14 @@
+@CHARSET "US-ASCII";
+
+.visualizationComponent
+{
+	background-color: black;
+	padding-top: 7px; /* spacing in vaadin's layout */
+}
+
+.visualizationComponent > .v-expand > .v-slot > .v-label.v-widget
+{
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}

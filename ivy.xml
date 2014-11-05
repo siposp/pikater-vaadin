@@ -1,45 +1,45 @@
 <?xml version="1.0"?>
 <!DOCTYPE ivy-module [
-	<!ENTITY spring.version "4.0.0.RELEASE">
+	<!ENTITY vaadin.version "7.1.14">
 ]>
 <ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
-	<info organisation="org.pikater" module="core-system" revision="1.0.0" />
+	<info organisation="org.pikater" module="pikater-vaadin" revision="1.0.0">
+		<extends extendType="all" organisation="org.pikater" module="pikater-core" revision="1.0.0" location="../pikater-core/Ivy.xml"/>
+	</info>
 	<configurations>
-		<!-- The default configuration -->
+		<!-- The default configuration, which should be deployed to the server -->
 		<conf name="default" />
+		<!-- A configuration only needed when compiling the widget set. Should not be deployed to the server -->
+		<conf name="widgetset-compile" />
+		<!-- A configuration used in compilation of server side classes only. Should be deployed to the server -->
+		<conf name="nodeploy" />
 	</configurations>
 	<dependencies defaultconf="default" defaultconfmapping="default->default">
 	
-		<!-- SPRING - see:
-			http://stackoverflow.com/questions/2237537/which-maven-dependencies-to-include-for-spring-3-0
+		<!-- Vaadin includes -->
+		<dependency org="com.vaadin" name="vaadin-server" rev="&vaadin.version;" /> <!-- The core server part of Vaadin -->
+		<dependency org="com.vaadin" name="vaadin-themes" rev="&vaadin.version;" /> <!-- Vaadin themes -->
+		<dependency org="com.vaadin" name="vaadin-push" rev="&vaadin.version;" /> <!-- Push support -->
+		<dependency org="com.vaadin" name="vaadin-client-compiled" rev="&vaadin.version;" /> <!-- Precompiled DefaultWidgetSet -->
+		<dependency org="com.vaadin" name="vaadin-client" rev="&vaadin.version;" conf="widgetset-compile->default" /> <!-- Vaadin client side, needed for widget set compilation -->
+		<dependency org="com.vaadin" name="vaadin-client-compiler" rev="&vaadin.version;" conf="widgetset-compile->default" /> <!-- Compiler for custom widget sets. Should not be deployed -->
+		
+		<!-- Vaadin add-ons located in the Add-on online directory -->
+		<dependency org="org.vaadin.addons" name="wizards-for-vaadin" rev="1.0.2" />
+		<dependency org="com.wcs.wcslib" name="wcslib-vaadin-widget-multifileupload" rev="1.7.1" />
+		<dependency org="org.vaadin.alump.fancylayouts" name="fancylayouts-addon" rev="1.0.1" />
+		<dependency org="de.steinwedel.vaadin.addon" name="messagebox" rev="2.0.6" />
+		<dependency org="org.vaadin.addons" name="fonticon" rev="7.1.1" />	
+		<dependency org="org.vaadin.addons" name="dom" rev="0.1.0" />
+		<dependency org="org.vaadin.addons" name="actionbuttontextfield" rev="1.0.2" />
+		<!--
+		<dependency org="org.vaadin.alump.gofullscreen" name="gofullscreen-addon" rev="0.2.0" />
 		-->
-		<dependency org="org.springframework" name="spring-core" rev="&spring.version;" />
-		<dependency org="org.springframework" name="spring-beans" rev="&spring.version;" />
-		<dependency org="org.springframework" name="spring-context" rev="&spring.version;" />
-		<dependency org="org.springframework" name="spring-tx" rev="&spring.version;" />
-		<dependency org="org.springframework" name="spring-orm" rev="&spring.version;" />
-	
-		<!-- WEKA -->
-		<dependency org="nz.ac.waikato.cms.weka" name="weka-stable" rev="3.6.11" />
 		
-		<!-- APACHE COMMONS -->
-		<dependency org="org.apache.commons" name="commons-io" rev="1.3.2" />
-		<dependency org="org.mod4j.org.apache.commons" name="lang" rev="2.1.0" />
-		
-		<!-- DATABASE RELATED -->
-		<dependency org="org.eclipse.persistence" name="eclipselink" rev="2.6.0-M3" />
-		<dependency org="org.postgresql" name="postgresql" rev="9.3-1101-jdbc41" />
-		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" />
-		
-		<!-- DATASET CONVERSIONS -->
-		<dependency org="org.apache.poi" name="poi" rev="3.10-FINAL" />
-		<dependency org="org.apache.poi" name="poi-ooxml" rev="3.10-FINAL" />
-		
-		<!-- MISCELLANEOUS -->
-		<dependency org="com.thoughtworks.xstream" name="xstream" rev="1.4.7" />
-		<dependency org="org.quartz-scheduler" name="quartz" rev="2.2.1" />
-		<dependency org="org.reflections" name="reflections" rev="0.9.9" />
-		<dependency org="javax.mail" name="mail" rev="1.5.0-b01" />
+		<!-- Miscellaneous includes -->
+		<dependency org="javax.servlet" name="javax.servlet-api" rev="3.0.1" conf="nodeploy->default" /> <!-- Servlet 3.0 API -->
+		<dependency org="com.jcraft" name="jsch" rev="0.1.50" />
+		<dependency org="org.fusesource.jansi" name="jansi" rev="1.11" />
 		
 	</dependencies>
 </ivy-module>

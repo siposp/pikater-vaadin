@@ -1,0 +1,12 @@
+@CHARSET "US-ASCII";
+
+.anchor
+{
+	text-decoration: underline;
+	color: blue;
+}
+
+.anchor:hover
+{
+	color: orange;
+}

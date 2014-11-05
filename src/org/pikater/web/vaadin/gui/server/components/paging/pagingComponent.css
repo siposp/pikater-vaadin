@@ -1,0 +1,17 @@
+@CHARSET "US-ASCII";
+
+.pagingComponent
+{
+}
+
+.pagingComponent .v-filterselect-input
+{
+	width: 30px;
+}
+
+.v-slot-dbTable+.v-slot-pagingComponent, .v-slot-dbTable+.v-spacing+.v-slot-pagingComponent
+{
+	/* always add a bit of space between paging component and database table */
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

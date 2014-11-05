@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<topology>
+  <masters>
+    <server>
+      <hostname>u-pl1.ms.mff.cuni.cz</hostname>
+      <fingerprint>19:dd:b4:3b:e3:e7:ab:44:e0:6a:eb:0e:0d:ae:d1:b1</fingerprint>
+      <username>smolj7bm</username>
+      <password></password>
+      <directory>BIG/Softwerak</directory>
+    </server>
+  </masters>
+  <slaves>
+  	<server>
+      <hostname>u-pl3.ms.mff.cuni.cz</hostname>
+      <fingerprint>19:dd:b4:3b:e3:e7:ab:44:e0:6a:eb:0e:0d:ae:d1:b1</fingerprint>
+      <username>smolj7bm</username>
+      <password></password>
+      <directory>BIG/Softwerak</directory>
+    </server>
+    <server>
+      <hostname>u-pl2.ms.mff.cuni.cz</hostname>
+      <fingerprint>19:dd:b4:3b:e3:e7:ab:44:e0:6a:eb:0e:0d:ae:d1:b1</fingerprint>
+      <username>smolj7bm</username>
+      <password></password>
+      <directory>BIG/Softwerak</directory>
+    </server>
+  </slaves>
+</topology>

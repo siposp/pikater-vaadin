@@ -1,0 +1,54 @@
+@CHARSET "US-ASCII";
+
+.custom-tabsheet
+{
+	border: 1px solid black;
+}
+.custom-tabsheet-tabs
+{
+}
+.custom-tabsheet-tabs-tab
+{
+	position: relative;
+	padding-left: 8px;
+	padding-right: 5px;
+	background-color: white;
+	border-top: 2px outset black;
+	border-left: 2px outset black;
+	border-right: 2px outset black;
+}
+.custom-tabsheet-tabs-tab-selected
+{
+	border-top: 2px inset black;
+	border-left: 2px inset black;
+	border-right: 2px inset black;
+	background-color: black;
+	color: white;
+}
+.custom-tabsheet-tabs-tab:not(.custom-tabsheet-tabs-tab-selected):hover
+{
+	cursor: pointer;
+	background: #ccc;
+}
+.custom-tabsheet-tabs-tab-label
+{
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: transparent;
+}
+.custom-tabsheet-tabs-tab .v-panel, .custom-tabsheet-tabs-tab .v-panel-content, .custom-tabsheet-tabs-tab .v-horizontallayout
+{
+	background-color: transparent;
+}
+.custom-tabsheet-tabs-tab .v-panel-deco, .custom-tabsheet-tabs-tab .v-panel-content 
+{
+	border: 0px;
+}
+.custom-tabsheet-tabs-tab-add
+{
+}
+.custom-tabsheet-content-container
+{
+}

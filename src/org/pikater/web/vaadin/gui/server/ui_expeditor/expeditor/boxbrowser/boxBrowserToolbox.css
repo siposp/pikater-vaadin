@@ -1,0 +1,37 @@
+@CHARSET "US-ASCII";
+
+.boxBrowserToolbox
+{
+	height: 100%;
+	padding: 1px;
+	border: 1px solid black;
+}
+
+.v-customcomponent.boxBrowserToolbox
+{
+	/* width: auto; */
+}
+
+.boxBrowserToolbox-accordion
+{
+	width: 100%;
+}
+
+.boxBrowserToolbox-accordion .v-accordion-item
+{
+	/* width: auto; */
+	display: block;
+}
+
+.boxBrowserToolbox-accordion-content
+{
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+}
+
+.boxBrowserToolbox-accordion-content-draggable:hover
+{
+	background-color: lightyellow;
+}

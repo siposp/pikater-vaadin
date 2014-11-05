@@ -1,4 +1,0 @@
-How to run the test:
- 1) select test and copy file ,,test.xml,, to root directory
- 2) ant build
- 3) ./runPikater.sh

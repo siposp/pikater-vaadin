@@ -1,0 +1,39 @@
+@CHARSET "US-ASCII";
+
+.myWizard 
+{
+}
+
+.myWizard.contentPadding > .v-verticallayout > .v-expand > .v-slot:nth-child(2) > .v-panel > .v-panel-content 
+{
+	padding: 15px;
+}
+
+.myWizard.contentPadding > .v-verticallayout > .v-slot:nth-child(2) > .v-panel > .v-panel-content 
+{
+	padding: 15px;
+}
+
+/******************************************************/
+/* INDIVIDUAL WIZARD STYLES */
+
+.dynamicWizard .v-slot-step-caption
+{
+	margin-right: 25px;
+}
+
+.dialogWizard
+{
+	padding-top: 15px;
+}
+
+.dialogWizard .v-label.v-label-undef-w.v-label-undefWidth-wordWrap
+{
+	/*
+	Problem: 'v-label-undef-w' overrides label's 'white-space' property to 'nowrap'.
+	What we want: text wrapped even if width is undefined.
+	Solution: add style 'v-label-undefWidth-wordWrap'.
+	*/
+	
+	white-space: normal; /* override the property again */
+}

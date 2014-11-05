@@ -1,0 +1,25 @@
+@CHARSET "US-ASCII";
+
+.verticalGroupLayout
+{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-radius: 5px;
+	
+	padding: 20px 10px 5px 10px;
+}
+
+.v-caption-verticalGroupLayout
+{
+	padding-left: 15px;
+	margin-bottom: -15px;
+	display: inline-block;
+}
+
+.v-caption-verticalGroupLayout .v-captiontext
+{
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: underline;
+}

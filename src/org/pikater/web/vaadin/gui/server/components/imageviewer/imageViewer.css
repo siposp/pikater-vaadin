@@ -1,0 +1,25 @@
+@CHARSET "US-ASCII";
+
+.imageViewer
+{
+	border: 1px solid gray;
+	overflow: hidden;
+}
+
+.imageViewer-toolbar 
+{
+	padding: 10px;
+	background-color: gray;
+	color: white;
+}
+
+.imageViewer-toolbar .v-label /* text in toolbar */
+{
+	
+}
+
+.imageViewer .v-slot:nth-child(2) /* container for image scaler */
+{
+	padding: 5px;
+	overflow: scroll;
+}

@@ -1,0 +1,86 @@
+@CHARSET "US-ASCII";
+
+.boxManagerToolbox
+{
+	height: 100%;
+	padding: 1px;
+	border: 1px solid black;
+	max-width: 350px;
+	overflow: auto;
+}
+
+.boxManagerToolbox .emphasizedLabel.v-widget
+{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.boxManagerToolbox .viewItem
+{
+	margin-bottom: 20px;
+}
+
+.boxManagerOverview .listItem, .boxManagerSlotView .listItem
+{
+	width: 100%;
+	height: 25px; /* synchronize this with "line-height" below */
+	background: #fff;
+}
+
+.boxManagerOverview .listItem > *, .boxManagerSlotView .listItem > *
+{
+	/* allow vertical centering of the text in list items */
+	margin-top: 1px;
+	line-height: 25px; /* synchronize this with "height" above */
+}
+
+.boxManagerOverview .v-captiontext, .boxManagerSlotView .v-captiontext 
+{
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.boxManagerOverview, .boxManagerOptionView, .boxManagerSlotView
+{
+	padding: 10px;
+}
+
+/*************************************************************/
+/* OVERVIEW */
+
+.boxManagerOverview .v-slot-ledIndicator
+{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/*************************************************************/
+/* OPTION VIEW */
+
+.boxManagerOptionView .emphasizedLabel
+{
+	margin-bottom: 5px; /* act as a caption */
+}
+
+.boxManagerOptionView .v-captiontext
+{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.boxManagerOptionView .actionbuttontextfield-textfield
+{
+	padding-right: 0;
+}
+
+.boxManagerOptionView .actionbuttontextfield-search
+{
+	margin-left: -22px;
+	right: 0;
+}
+
+.v-caption-customFormLayout
+{
+	margin-bottom: -5px;
+}

@@ -1,0 +1,48 @@
+@CHARSET "US-ASCII";
+
+.expEditor
+{
+}
+
+.expEditor.v-customlayout
+{
+	overflow: scroll;
+}
+
+.expEditor .top-interface
+{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.expEditor .menu
+{
+}
+
+.expEditor .menu .v-menubar-menuitem-menu-topLevelItem
+{
+	/* override Vaadin's menu bar's top-level menu items */
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.expEditor .toolbar /* HorizontalLayout representing the toolbar itself */
+{
+	padding: 5px 10px 5px 10px;
+}
+
+.expEditor .kineticComponent
+{
+	overflow: auto;
+}
+
+.loadExperimentDialogContent
+{
+	margin-bottom: 10px;
+}
+
+.loadExperimentDialogContent .pagingComponent
+{
+	padding-left: 15px;
+	padding-right: 15px;
+}

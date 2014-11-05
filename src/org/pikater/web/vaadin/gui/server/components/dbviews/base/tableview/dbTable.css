@@ -1,0 +1,39 @@
+@CHARSET "US-ASCII";
+
+.dbTable
+{
+}
+
+.dbTable > .v-scrollable
+{
+	overflow: hidden;
+}
+
+.dbTable .v-table-row-spacer:last-child
+{
+	/*
+	 * Display a warning if no items are available for the table.
+	 * Since we can't use CSS to force text inside an element, we have to use an image:
+	 */
+	
+	background-image: url('/Pikater/VAADIN/themes/pikater/images/table-no-items.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	margin-top: 1px; /* manually shift the image to make it look more vertically centered (it is not perfectly made) */
+}
+
+.dbTable .v-table-cell-content
+{
+	vertical-align: middle;
+}
+
+.dbTable .v-table-cell-wrapper .v-textfield
+{
+	width: 100%;
+}
+
+.dbTable .v-checkbox
+{
+	text-align: center;
+}

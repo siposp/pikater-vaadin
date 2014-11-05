@@ -1,0 +1,67 @@
+@CHARSET "US-ASCII";
+
+.toolbox-bar
+{
+	width: 100%;
+	height: 25px;
+	
+	/* properties copied from the Vaadin menu bar to make the bar look the same */
+	background: #323336 repeat-x;
+	color: #d1d3d6;
+	text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0;
+}
+
+.toolbox-bar-caption
+{
+	height: 100%;
+    margin-right: 45px; /* the width of the minimize button + some extra space */
+    margin-left: 15px; /* just some space to resemble the Vaadin's menu bar */
+}
+
+.toolbox-bar-buttons
+{
+	float: right;
+	height: 100%;
+	
+	padding-top: 2px; /* shifts the buttons a bit downwards to look nicer */
+	margin-right: 5px; /* shifts the buttons a bit to the left to look nicer */
+}
+
+.toolbox-bar-caption-label
+{
+	width: 100%;
+	
+	/* properties copied from the Vaadin menu bar to make the bar look the same */
+	font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+	font-weight: bold;
+}
+
+.toolbox-bar-caption-label.v-widget.v-has-width /* a hack to override some properties of v-widget and v-has-width */
+{
+	font-size: 14px;
+	white-space: nowrap; /* forbids line wrapping for the bar's caption/label */
+	text-align: center; /* horizontally centers the bar's caption/label */
+	display: inline-table; /* vertically more or less centers the bar's caption/label - doesn't work for IE6 and IE7 */
+}
+
+.toolbox-bar-buttons-min
+{
+	background-color: #d1d3d6;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.toolbox-bar-buttons-min:hover
+{
+    background-color: gold;
+}
+
+.toolbox-bar-buttons-min:active
+{
+    background-color: #323336;
+}
+
+.toolbox-content
+{
+	padding: 10px;
+}
