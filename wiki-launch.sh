@@ -5,7 +5,7 @@ THISPATH=$(pwd)/
 
 # define the command to launch gollum
 get_launch_command(){
-    echo "gollum --collapse-tree --live-preview --gollum-path \"$THISPATH/wiki\" --css --js --ref vaadin --config wiki-config.rb"
+    echo "gollum --collapse-tree --live-preview --config wiki-config.rb --gollum-path \"$THISPATH\" --css --js"
 }
 
 # check whether the path is correct (it contains this script)

@@ -18,6 +18,18 @@
   	width: 100%;
   }
   
+  /* Style for root element of a UI */
+  .topLevelElement
+  {
+  	display: block;
+	width: 1350px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+  }
+  
   /* Miscellaneous global styles */
   .maxWidth
   {
