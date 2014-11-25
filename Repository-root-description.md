@@ -43,7 +43,7 @@ Our compliments to [SonarQube](http://www.sonarqube.org/) to make this happen. I
 
 ### Javadoc
 
-The repository contains Javadoc generated to all source code in the `src` folder and is located in the `javadoc` folder. MarkDown files link to it as well.
+The repository contains Javadoc generated to all source code in the `src` folder and is located in the `wiki/javadoc` folder. MarkDown files link to it as well.
 
 ### Wiki
 
