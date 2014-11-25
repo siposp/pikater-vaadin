@@ -91,9 +91,8 @@ Dále došlo k výměně ontologie `Option`. Původní verze využívala k repre
 
 Všechna sdílená data jsou nyní ukládána do objektově-relační databáze, kterou využívá i webové rozhraní.
 
-**Schéma nové architektury**
-
-[[/docs/technical/architektura-final.png]]
+Nové schéma architektury:  
+[[../architektura-final.png|alt=schema]]
 
 ### Dávky
 

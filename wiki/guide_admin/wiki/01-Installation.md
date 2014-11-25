@@ -108,5 +108,4 @@ All created gemsets for the currently selected ruby.
 ### Miscellaneous
 
 * RVM creates a new completely separate gem directory for each version of ruby and gemset, so install away :).
-* If you are deploying to a server or you don't want to wait around for rdoc and ri to install for each gem, you can disable them for gem installs and updates. Just add the following line to your `~/.gemrc or /etc/gemrc`:  
-`gem: --no-rdoc --no-ri`
+* If you are deploying to a server or you don't want to wait around for rdoc and ri to install for each gem, you can disable them for gem installs and updates. Just add the following line to your `~/.gemrc` or `/etc/gemrc`: `gem: --no-rdoc --no-ri`

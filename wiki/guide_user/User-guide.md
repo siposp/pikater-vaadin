@@ -159,7 +159,7 @@ With respect to the preceding chapter, the following limitations apply:
 
 #### Summary
 
-URL: `http://my.domain/Pikater/index`  
+URL: `http://my.domain/pikater-vaadin/index`  
 This is the "overview" page from which other pages may be accessed.
 
 Administrators will find all their [[features|Web-documentation#adminFeatures]] on this page.  
@@ -184,7 +184,7 @@ Special use cases are described in the [FAQ](#faq) section.
 
 #### Summary
 
-URL: `http://my.domain/Pikater/visualization`  
+URL: `http://my.domain/pikater-vaadin/visualization`  
 This page is generated as a result of dataset visualization or comparison.
 
 #### Documentation
@@ -208,7 +208,7 @@ Selection can be reset either by (again) clicking on selected indexes or clickin
 
 #### Summary
 
-URL: `http://my.domain/Pikater/editor`  
+URL: `http://my.domain/pikater-vaadin/editor`  
 
 Experiment editor is used to define, save, load and queue experiments - simple graphs of boxes and edges with various configurations.
 

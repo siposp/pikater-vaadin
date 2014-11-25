@@ -42,7 +42,7 @@ Alternatively, you may enter the [fileview](/fileview) and browse the `src` fold
 
 ### Javadoc<a name="javadoc"/>
 
-* [Open Javadoc](../../javadoc/index.html) <font color="red">TODO: GitHub link</font>
+* [Open Javadoc](../javadoc/index.html)
 
 
 
