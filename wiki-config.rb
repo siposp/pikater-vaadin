@@ -3,7 +3,7 @@ Gollum::Page.send :remove_const, :FORMAT_NAMES if defined? Gollum::Page::FORMAT_
 
 # Specify formats used by the wiki. Formats not specified will not be displayed/created/used.
 # Use the list of formats bellow.
-Gollum::Page::FORMAT_NAMES = { :asciidoc => "AsciiDoc", :markdown => "Markdown", :mediawiki => "MediaWiki", :textile => "Textile", }
+Gollum::Page::FORMAT_NAMES = { :markdown => "Markdown" }
 
 =begin
 Format definitions supported by the wiki:
