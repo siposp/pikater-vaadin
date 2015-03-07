@@ -4,7 +4,7 @@
 ]>
 <ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
 	<info organisation="org.pikater" module="pikater-vaadin" revision="1.0.0">
-		<extends extendType="all" organisation="org.pikater" module="pikater-core" revision="1.0.0" location="../pikater-core/Ivy.xml"/>
+		<extends extendType="all" organisation="org.pikater" module="pikater-core" revision="1.0.0" location="../pikater-core/ivy.xml"/>
 	</info>
 	<configurations>
 		<!-- The default configuration, which should be deployed to the server -->
