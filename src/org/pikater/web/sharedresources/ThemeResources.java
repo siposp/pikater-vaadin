@@ -35,23 +35,23 @@ public class ThemeResources {
 	/*
 	 * Notification icons.
 	 */
-	public static final String relPath_IMG_notificationInfoIcon = "images/win8metroicons/notifications/icon-info-48x48.png";
-	public static final String relPath_IMG_notificationSuccessIcon = "images/win8metroicons/notifications/icon-success-48x48.png";
-	public static final String relPath_IMG_notificationWarnIcon = "images/win8metroicons/notifications/icon-warn-48x48.png";
-	public static final String relPath_IMG_notificationErrorIcon = "images/win8metroicons/notifications/icon-error-48x48.png";
+	public static final String relPath_IMG_notificationInfoIcon = "images/Win8MetroIcons/notifications/icon-info-48x48.png";
+	public static final String relPath_IMG_notificationSuccessIcon = "images/Win8MetroIcons/notifications/icon-success-48x48.png";
+	public static final String relPath_IMG_notificationWarnIcon = "images/Win8MetroIcons/notifications/icon-warn-48x48.png";
+	public static final String relPath_IMG_notificationErrorIcon = "images/Win8MetroIcons/notifications/icon-error-48x48.png";
 
 	/*
 	 * Boxes.
 	 */
-	public static final String relPath_IMG_boxInputIcon = "images/win8metroicons/boxes/icon-input-48x48.png";
-	public static final String relPath_IMG_boxOutputIcon = "images/win8metroicons/boxes/icon-output-48x48.png";
-	public static final String relPath_IMG_boxSearcherIcon = "images/win8metroicons/boxes/icon-searcher-48x48.png";
-	public static final String relPath_IMG_boxComputingIcon = "images/win8metroicons/boxes/icon-computing-48x48.png";
-	public static final String relPath_IMG_boxRecommenderIcon = "images/win8metroicons/boxes/icon-recommender-48x48.png";
-	public static final String relPath_IMG_boxWrapperIcon = "images/win8metroicons/boxes/icon-wrapper-48x48.png";
-	public static final String relPath_IMG_boxDataProcessingIcon = "images/win8metroicons/boxes/icon-dataprocessing-48x48.png";
-	public static final String relPath_IMG_boxEvaluationIcon = "images/win8metroicons/boxes/icon-evaluation-48x48.png";
-	public static final String relPath_IMG_boxMiscellaneousIcon = "images/win8metroicons/boxes/icon-miscellaneous-48x48.png";
+	public static final String relPath_IMG_boxInputIcon = "images/Win8MetroIcons/boxes/icon-input-48x48.png";
+	public static final String relPath_IMG_boxOutputIcon = "images/Win8MetroIcons/boxes/icon-output-48x48.png";
+	public static final String relPath_IMG_boxSearcherIcon = "images/Win8MetroIcons/boxes/icon-searcher-48x48.png";
+	public static final String relPath_IMG_boxComputingIcon = "images/Win8MetroIcons/boxes/icon-computing-48x48.png";
+	public static final String relPath_IMG_boxRecommenderIcon = "images/Win8MetroIcons/boxes/icon-recommender-48x48.png";
+	public static final String relPath_IMG_boxWrapperIcon = "images/Win8MetroIcons/boxes/icon-wrapper-48x48.png";
+	public static final String relPath_IMG_boxDataProcessingIcon = "images/Win8MetroIcons/boxes/icon-dataprocessing-48x48.png";
+	public static final String relPath_IMG_boxEvaluationIcon = "images/Win8MetroIcons/boxes/icon-evaluation-48x48.png";
+	public static final String relPath_IMG_boxMiscellaneousIcon = "images/Win8MetroIcons/boxes/icon-miscellaneous-48x48.png";
 
 	/*
 	 * Various.
