@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project-modules id="moduleCoreId" project-version="1.5.0">
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="pikater-vaadin">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/core/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/core/test"/>
         <property name="context-root" value="pikater-vaadin"/>
         <property name="java-output-path" value="/pikater-vaadin/build/classes"/>
     </wb-module>
