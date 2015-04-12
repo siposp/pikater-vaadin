@@ -41,5 +41,7 @@
 		<dependency org="com.jcraft" name="jsch" rev="0.1.50" />
 		<dependency org="org.fusesource.jansi" name="jansi" rev="1.11" />
 		
+		<!-- OpenML API -->
+		<dependency org="org.openml" name="apiconnector" rev="1.0.4"/>
 	</dependencies>
 </ivy-module>

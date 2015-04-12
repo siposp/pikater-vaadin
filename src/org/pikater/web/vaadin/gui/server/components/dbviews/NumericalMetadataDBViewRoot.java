@@ -36,8 +36,11 @@ public class NumericalMetadataDBViewRoot extends AbstractDBViewRoot<NumericalMet
 		case AVERAGE:
 		case MEDIAN:
 		// case MODE:
+		case QUARTILE_1:
+		case QUARTILE_2:
+		case QUARTILE_3:
 			return 65;
-
+		case STD_DEVIATION:
 		case VARIANCE:
 			return 70;
 		case RATIO_OF_MISSING_VALUES:
