@@ -43,5 +43,8 @@
 		
 		<!-- OpenML API -->
 		<dependency org="org.openml" name="apiconnector" rev="1.0.4"/>
+		
+		<!-- Apache Commons Math -->
+		<dependency org="org.apache.commons" name="commons-math3" rev="3.4.1"/>
 	</dependencies>
 </ivy-module>

@@ -35,6 +35,12 @@ public class CategoricalMetadataDBViewRoot extends AbstractDBViewRoot<Categorica
 			return 75;
 		case ENTROPY:
 			return 115;
+		case CHI_SQAURE:
+			return 45;
+		case CHI_SQUARE_TEST:
+			return 45;
+		case G_TEST:
+			return 45;
 		default:
 			throw new IllegalStateException(String.format("No sizing information found for column '%s'", specificColumn.name()));
 		}
