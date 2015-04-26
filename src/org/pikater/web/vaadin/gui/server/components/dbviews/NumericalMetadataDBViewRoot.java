@@ -33,6 +33,8 @@ public class NumericalMetadataDBViewRoot extends AbstractDBViewRoot<NumericalMet
 		case MAXIMUM:
 		case AVERAGE:
 		case MEDIAN:
+		case SKEWNESS:
+		case KURTOSIS:
 		// case MODE:
 		case CHI_SQUARE_NORM:
 		case CHI_SQUARE_NORM_T:
