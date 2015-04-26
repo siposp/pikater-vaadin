@@ -35,7 +35,7 @@ public class CategoricalMetadataDBViewRoot extends AbstractDBViewRoot<Categorica
 			return 75;
 		case ENTROPY:
 			return 115;
-		case CHI_SQAURE:
+		case CHI_SQUARE:
 			return 45;
 		case CHI_SQUARE_TEST:
 			return 45;
