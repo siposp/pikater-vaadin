@@ -27,7 +27,7 @@ public class NumericalMetadataDBViewRoot extends AbstractDBViewRoot<NumericalMet
 			return 100;
 		case IS_TARGET:
 		case IS_REAL:
-			return 50;
+			return 25;
 
 		case MINIMUM:
 		case MAXIMUM:
@@ -38,21 +38,26 @@ public class NumericalMetadataDBViewRoot extends AbstractDBViewRoot<NumericalMet
 		// case MODE:
 		case CHI_SQUARE_NORM:
 		case CHI_SQUARE_NORM_T:
+			return 35;
 		case G_TEST:
 			return 45;
 		case QUARTILE_1:
 		case QUARTILE_2:
 		case QUARTILE_3:
-			return 65;
+			return 25;
 		case STD_DEVIATION:
 		case VARIANCE:
-			return 45;
+			return 25;
 		case RATIO_OF_MISSING_VALUES:
-			return 55;
+			return 25;
 		case ENTROPY:
-			return 70;
+			return 30;
 		case CLASS_ENTROPY:
-			return 80;
+			return 30;
+		case COVARIANCE:
+		case U_TEST:
+		case KS_TEST:
+			return 35;
 
 		default:
 			throw new IllegalStateException(String.format("No sizing information found for column '%s'", specificColumn.name()));
