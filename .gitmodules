@@ -1,3 +1,6 @@
 [submodule "core"]
 	path = core
 	url = https://SkyCrawl@github.com/sbalcar/pikater
+	ignore = untracked
+	update = checkout
+	fetchRecurseSubmodules = true
